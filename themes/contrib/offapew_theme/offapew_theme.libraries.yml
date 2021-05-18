@@ -1,0 +1,10 @@
+global-styling:
+  version: VERSION
+  css:
+    theme:
+      https://fonts.googleapis.com/css?family=Anton|Playfair+Display|Poiret+One|Raleway&display=swap : { type: external }
+      src/css/style.css : {}
+  js:
+    src/js/script.js: {}
+
+

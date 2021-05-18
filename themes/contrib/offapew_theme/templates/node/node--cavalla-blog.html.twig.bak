@@ -1,0 +1,32 @@
+<section id="blog_page_cavalla">
+  <section class="container">
+    <section class="row m-auto w-100">
+      <section class="col-12 pl-0">
+        <h1 class="title-header">{{node.title.value}}</h1>
+        <p class="summary">{{ content.field_cavalla_blog_summary }}</p>
+      </section>
+      <div class="col col-12 col-md-8 pl-0">
+        {% if 'Off' in content.field_cavalla_blog_hero_img_hide[0] %}
+          {%  if true in content.field_cavalla_blog_hero_image[0] %}
+          <img  class="background_image" src="{% spaceless %}{{content.field_cavalla_blog_hero_image[0]}}{% endspaceless %}" width="100%"/>
+          {% endif %}
+        {% endif %}
+        <div class="my-3">
+          <p class="mb-0"><b>By&nbsp;{{ first_name }}&nbsp;{{ last_name }}</b></p>
+          <p><date>{{ date }}</date></p>
+        </div>
+        {{ content.field_cavalla_blog_widgets }}
+        <section class="blog_post_feed_footer">
+          {{ content.field_suggested_post_feeds_foot }}
+        </section>
+
+      </div>
+      <div class="col col-12 col-md-4 blog_post_feed mx-auto">
+        {{ content.field_cavalla_blog_sp_feeds }}
+      </div>
+    </section>
+  </section>
+  <section class="blog_author container" aria="Blog Author">
+    {{ content.field_cavalla_blog_author }}
+  </section>
+</section>

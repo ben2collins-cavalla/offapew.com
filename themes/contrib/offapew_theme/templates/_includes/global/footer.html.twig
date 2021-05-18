@@ -1,0 +1,71 @@
+<footer class="page-footer">
+    <div class="footer-menus navbar-dark bg-dark">
+     <div class="container">
+       <div class="row">
+         <div class="col-md-4 col-sm-12 left_side">
+           <address class="grey-text text-lighten-4">
+            <h1>{{ address_organization_name }}</h1>
+            <address>
+              <ul class="mb-0">
+                {% if address_street %}
+                <li>{{ address_street }}</li>
+                {% endif %}
+
+                {% if address_city_state_zipcode %}
+                <li>{{ address_city_state_zipcode }}</li>
+                {% endif %}
+              </ul>
+            </address>
+            <div>
+              <ul class="mb-0">
+                {% if address_phone %}
+                <li>{{ address_phone }}</li>
+                {% endif %}
+
+                {% if address_email %}
+                <li>{{ address_email }}</li>
+                {% endif %}
+              </ul>
+           </div>
+         </div>
+         <div class="col-md-8 col-sm-12 right_side">
+         <div class="col-md-4 col-sm-12 float-left">
+           {{ page.footer_first}}
+         </div>
+         <div class="col-md-4 col-sm-12 float-left">
+           {{ page.footer_second}}
+         </div>
+         <div class="col-md-4 col-sm-12 float-left">
+          <div class=" col-12 social-links">
+
+            <a href="{{ facebook_link }}" class="fa fa-facebook" target="_blank"></a>
+
+            {% if twitter_link %}
+            <a href="{{ twitter_link }}" class="fa fa-twitter" target="_blank"></a>
+            {% endif %}
+
+            {% if instagram_link %}
+            <a href="{{ instagram_link }}" class="fa fa-instagram" target="_blank"></a>
+            {% endif %}
+
+            {% if linkedin_link %}
+            <a href="{{ linkedin_link }}" class="fa fa-linkedin" target="_blank"></a>
+            {% endif %}
+
+            {% if youtube_link %}
+            <a href="{{ youtube_link }}" class="fa fa-youtube" target="_blank"></a>
+            {% endif %}
+
+          </div>
+        </div>
+       </div>
+     </div>
+    </div>
+    </div>
+     <div class="footer-copyright ">
+       <div class="container">
+       <div class="copyright float-left"> ©2015 Copyright&nbsp;{{ address_organization_name }}.</div>
+       <aside class="float-right legal"> {{ page.footer_third}}</aside>
+       </div>
+     </div>
+   </footer>

@@ -1,0 +1,25 @@
+<?php
+use Drupal\node\Entity\Node;
+use Drupal\user\Entity\User;
+
+
+
+
+function offapew_theme_preprocess_node__cavalla_blog(&$variables){
+  $node = $variables['elements']['#node'];
+  $uid = $node->getOwnerId();
+  $creation_date = $node->getCreatedTime();
+  $variables['date'] = format_date($creation_date, 'cavalla_date_time');
+
+  $variables['first_name'] = User::load($uid)->get('field_user_first_name')->value;
+  $variables['last_name'] = User::load($uid)->get('field_user_last_name')->value;
+}
+
+function offapew_theme_preprocess_menu__main(&$variables){
+  $variables['attributes']['class'][] = 'nav justify-content-center';
+}
+
+
+function offapew_theme_preprocess_status_messages(&$variables){
+  $variables['attributes']['class'] = 'alert alert-success container';
+}
